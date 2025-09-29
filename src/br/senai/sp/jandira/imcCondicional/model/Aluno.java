@@ -16,7 +16,7 @@ public class Aluno {
         System.out.println("Digite o nome do aluno(a): ");
         nome = leitor.nextLine();
 
-        System.out.println("Agora digite a altura (em metros): ");
+        System.out.println("Agora digite a altura (em metros e com vírgula): ");
         altura = leitor.nextDouble();
 
         System.out.println("Pra finalizar, digite o peso do aluno(a) (em kg): ");
@@ -35,15 +35,15 @@ classificacaoCondicional();
     }
 
     public void classificacaoCondicional(){
-        if (imc <= 18.5) {
+        if (imc < 18.5) {
             status = "Abaixo do peso";
-        } else if (imc <= 24.9) {
+        } else if (imc >= 18.6 && imc <= 29.9) {
             status = "Peso ideal (Muito bem)";
-        } else if (imc <= 29.9) {
+        } else if (imc >= 25.0 && imc <= 29.9) {
             status = "Levemente acima do peso";
-        } else if (imc <= 34.9) {
+        } else if (imc >= 30.0 && imc <= 34.9) {
             status = "Obesidade grau I";
-        } else if (imc <= 39.9) {
+        } else if (imc >= 35.0 && imc <= 39.9) {
             status = "Obesidade grau II (severa)";
         } else {
             status = "Obesidade grau III";
@@ -56,9 +56,11 @@ classificacaoCondicional();
 
         String imcDecimal = String.format("%.2f", imc);
 
+        System.out.println();
         System.out.println("---------------------------------");
         System.out.println("*** RESULTADO ***");
         System.out.println("---------------------------------");
+        System.out.println();
         System.out.println("O aluno(a) se chama: " + nome);
         System.out.println("A altura do aluno (em metros) é: " + altura);
         System.out.println("O peso do aluno (em kg) é: " + peso);
